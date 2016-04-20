@@ -26,7 +26,7 @@ None
   roles:
     - ca-certificates
   vars:
-    ca_certificates_map:
+    ca_certificates_certificate_map:
       - src: ca-oefenweb-nl.crt
         dest: oefenweb/Oefenweb_nl-B_V.crt
 ```
