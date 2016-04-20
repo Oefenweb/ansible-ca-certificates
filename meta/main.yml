@@ -1,0 +1,22 @@
+# meta file for ca-certificates
+---
+galaxy_info:
+  author: Mischa ter Smitten
+  company: Oefenweb.nl B.V.
+  description: Manage ca-certificates in Debian-like systems
+  license: MIT
+  min_ansible_version: 1.6
+  platforms:
+    - name: Ubuntu
+      versions:
+        - precise
+        - trusty
+    - name: Debian
+      versions:
+        - wheezy
+        - jessie
+  galaxy_tags:
+    - system
+    - certificates
+    - ssl
+dependencies: []

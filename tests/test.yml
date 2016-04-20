@@ -1,0 +1,11 @@
+# test file for ca-certificates
+---
+- hosts: localhost
+  connection: local
+  sudo: true
+  roles:
+    - ../../
+  vars:
+    ca_certificates_map:
+      - src: ca-oefenweb-nl.crt
+        dest: oefenweb/Oefenweb_nl-B_V.crt

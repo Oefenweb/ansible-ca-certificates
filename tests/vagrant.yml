@@ -1,0 +1,7 @@
+# test file for ca-certificates
+---
+- hosts: all
+  remote_user: vagrant
+  sudo: true
+  roles:
+    - ../../
