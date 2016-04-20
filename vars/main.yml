@@ -1,0 +1,7 @@
+# vars file for ca-certificates
+---
+ca_certificates_dependencies:
+  - ca-certificates
+
+ca_certificates_base_dir: /usr/share/ca-certificates
+ca_certificates_trust_file: /etc/ca-certificates.conf

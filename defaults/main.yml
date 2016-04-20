@@ -1,0 +1,3 @@
+# defaults file for ca-certificates
+---
+ca_certificates_certificate_map: []
