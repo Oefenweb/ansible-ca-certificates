@@ -2,11 +2,10 @@
 ---
 - name: install dependencies
   apt:
-    name: "{{ item }}"
+    name: "{{ ca_certificates_dependencies }}"
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
-  with_items: "{{ ca_certificates_dependencies }}"
   tags:
     - configuration
     - ca-certificates
@@ -16,7 +15,7 @@
 - name: stat directories
   stat:
     path: "{{ ca_certificates_base_dir }}/{{ item.dest | dirname }}"
-  register: stat_directories
+  register: _stat_directories
   with_items: "{{ ca_certificates_certificate_map }}"
   tags:
     - configuration
@@ -31,7 +30,7 @@
     owner: root
     group: root
     mode: 0755
-  with_items: "{{ stat_directories.results | default([]) }}"
+  with_items: "{{ _stat_directories.results | default([]) }}"
   when: item.stat.exists == false
   tags:
     - configuration

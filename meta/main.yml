@@ -1,6 +1,7 @@
 # meta file for ca-certificates
 ---
 galaxy_info:
+  role_name: ca-certificates
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
   description: Manage ca-certificates in Debian-like systems
@@ -12,10 +13,12 @@ galaxy_info:
         - precise
         - trusty
         - xenial
+        - bionic
     - name: Debian
       versions:
         - wheezy
         - jessie
+        - stretch
   galaxy_tags:
     - system
     - certificates
