@@ -31,7 +31,7 @@
     group: root
     mode: 0755
   with_items: "{{ _stat_directories.results | default([]) }}"
-  when: item.stat.exists == false
+  when: not item.stat.exists
   tags:
     - configuration
     - ca-certificates

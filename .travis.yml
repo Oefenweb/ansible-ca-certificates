@@ -83,17 +83,6 @@ before_install:
   # Remove ca-certificates
   - sudo apt-get remove --purge --yes ca-certificates
 
-  # Generate ca key and certificate
-  - openssl genrsa -out files/ca-oefenweb-nl.key 2048;
-  - >
-    openssl req \
-      -subj '/C=NL/ST=NH/L=Amsterdam/O=Oefenweb.nl B.V./OU=Systeembeheer/CN=oefenweb.nl/emailAddress=root@oefenweb.nl/' \
-      -x509 -new -nodes \
-      -key files/ca-oefenweb-nl.key \
-      -days 1 \
-      -out files/ca-oefenweb-nl.crt \
-    ;
-
 install:
   # Install Ansible.
   - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible; else pip install ansible==$ANSIBLE_VERSION; fi
