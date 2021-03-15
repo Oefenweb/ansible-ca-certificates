@@ -1,4 +1,4 @@
-# test file for ca-certificates
+# test file
 ---
 - hosts: localhost
   connection: local

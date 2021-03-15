@@ -1,4 +1,4 @@
-# tasks file for ca-certificates
+# tasks file
 ---
 - name: install dependencies
   apt:

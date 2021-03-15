@@ -1,4 +1,4 @@
-# handlers file for ca-certificates
+# handlers file
 ---
 - name: update ca-certificates
   command: >

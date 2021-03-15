@@ -1,4 +1,4 @@
-# vars file for ca-certificates
+# vars file
 ---
 ca_certificates_dependencies:
   - ca-certificates
