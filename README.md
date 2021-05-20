@@ -1,7 +1,7 @@
 ## ca-certificates
 
-[![Build Status](https://travis-ci.org/Oefenweb/ansible-ca-certificates.svg?branch=master)](https://travis-ci.org/Oefenweb/ansible-ca-certificates)
-[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-ca--certificates-blue.svg)](https://galaxy.ansible.com/Oefenweb/ansible-ca-certificates)
+[![CI](https://github.com/Oefenweb/ansible-ca-certificates/workflows/CI/badge.svg)](https://github.com/Oefenweb/ansible-ca-certificates/actions?query=workflow%3ACI)
+[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-ca--certificates-blue.svg)](https://galaxy.ansible.com/Oefenweb/ca_certificates)
 
 Manage ca-certificates in Debian-like systems.
 
