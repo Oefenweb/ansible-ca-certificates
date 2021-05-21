@@ -1,5 +1,10 @@
 # vars file
 ---
 ca_certificates_certificate_map:
-  - src: ca-oefenweb-nl.crt
+  - src: "{{ ca_certificates_certificate_crt_file | basename }}"
     dest: oefenweb/Oefenweb_nl-B_V.crt
+
+ca_certificates_certificate_directory: "{{ playbook_dir }}/../files"
+ca_certificates_certificate_file: "{{ ca_certificates_certificate_directory }}/ca-oefenweb-nl"
+ca_certificates_certificate_key_file: "{{ ca_certificates_certificate_file }}.key"
+ca_certificates_certificate_crt_file: "{{ ca_certificates_certificate_file }}.crt"

@@ -5,7 +5,8 @@
   become: true
   pre_tasks:
     - name: include vars
-      include_vars: main.yml
-    - import_tasks: pre.yml
+      include_vars: "{{ playbook_dir }}/vars/main.yml"
+    - name: include tasks
+      include: "{{ playbook_dir }}/tasks/pre.yml"
   roles:
     - ../../
