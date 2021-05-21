@@ -2,7 +2,7 @@
 ---
 galaxy_info:
   namespace: oefenweb
-  role_name: ca-certificates
+  role_name: ca_certificates
   author: Mischa ter Smitten
   company: Oefenweb.nl B.V.
   description: Manage ca-certificates in Debian-like systems
@@ -11,13 +11,11 @@ galaxy_info:
   platforms:
     - name: Ubuntu
       versions:
-        - precise
-        - trusty
         - xenial
         - bionic
+        - focal
     - name: Debian
       versions:
-        - wheezy
         - jessie
         - stretch
         - buster
