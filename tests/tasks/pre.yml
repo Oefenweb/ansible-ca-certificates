@@ -12,7 +12,7 @@
 
     - name: generate key
       command: >
-        openssl genrsa -out {{ ca_certificates_certificate_key_file }} 2048;
+        openssl genrsa -out {{ ca_certificates_certificate_key_file }} 2048
       args:
         creates: "{{ ca_certificates_certificate_key_file }}"
 
