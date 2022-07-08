@@ -1,23 +1,24 @@
 # pre test file
 ---
 - name: install dependencies
-  apt:
+  ansible.builtin.apt:
     name:
       - openssl
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
 
-- block:
+- name: generate
+  block:
 
     - name: generate key
-      command: >
+      ansible.builtin.command: >
         openssl genrsa -out {{ ca_certificates_certificate_key_file }} 2048
       args:
         creates: "{{ ca_certificates_certificate_key_file }}"
 
     - name: generate crt
-      shell: >
+      ansible.builtin.shell: >
         openssl req \
           -subj '/C=NL/ST=NH/L=Amsterdam/O=Oefenweb.nl B.V./OU=Systeembeheer/CN=oefenweb.nl/emailAddress=root@oefenweb.nl/' \
           -x509 -new -nodes \

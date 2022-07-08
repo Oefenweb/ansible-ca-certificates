@@ -1,5 +1,5 @@
 # handlers file
 ---
 - name: update ca-certificates
-  command: >
+  ansible.builtin.command: >
     update-ca-certificates
