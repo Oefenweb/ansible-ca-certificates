@@ -1,7 +1,7 @@
 # tasks file
 ---
 - name: install dependencies
-  apt:
+  ansible.builtin.apt:
     name: "{{ ca_certificates_dependencies }}"
     state: "{{ apt_install_state | default('latest') }}"
     update_cache: true
@@ -13,7 +13,7 @@
     - ca-certificates-install-dependencies
 
 - name: stat directories
-  stat:
+  ansible.builtin.stat:
     path: "{{ ca_certificates_base_dir }}/{{ item.dest | dirname }}"
   register: _stat_directories
   with_items: "{{ ca_certificates_certificate_map }}"
@@ -24,7 +24,7 @@
     - ca-certificates-directories-stat
 
 - name: create directories
-  file:
+  ansible.builtin.file:
     path: "{{ ca_certificates_base_dir }}/{{ item.item.dest | dirname }}"
     state: directory
     owner: root
@@ -39,7 +39,7 @@
     - ca-certificates-directories-create
 
 - name: copy ca files
-  copy:
+  ansible.builtin.copy:
     src: "{{ item.src }}"
     dest: "{{ ca_certificates_base_dir }}/{{ item.dest }}"
     owner: "{{ item.owner | default('root') }}"
@@ -54,7 +54,7 @@
     - ca-certificates-files-copy
 
 - name: trust ca files
-  lineinfile:
+  ansible.builtin.lineinfile:
     dest: "{{ ca_certificates_trust_file }}"
     line: "{{ item.dest }}"
   with_items: "{{ ca_certificates_certificate_map }}"
