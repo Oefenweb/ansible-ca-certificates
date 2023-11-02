@@ -25,7 +25,7 @@ None
 ---
 - hosts: all
   roles:
-    - ca-certificates
+    - oefenweb.ca-certificates
   vars:
     ca_certificates_certificate_map:
       - src: ca-oefenweb-nl.crt
