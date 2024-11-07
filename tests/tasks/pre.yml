@@ -9,8 +9,9 @@
     cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
 
 - name: generate
+  connection: local
+  become: false
   block:
-
     - name: generate key
       ansible.builtin.command: >
         openssl genrsa -out {{ ca_certificates_certificate_key_file }} 2048
@@ -28,6 +29,3 @@
         ;
       args:
         creates: "{{ ca_certificates_certificate_crt_file }}"
-
-  connection: local
-  become: false
